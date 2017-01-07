@@ -14,6 +14,8 @@ License
 ----
 MIT
 
+![N|Solid](https://cloud.githubusercontent.com/assets/13849789/21745172/259605a4-d54b-11e6-989c-8a17cb433755.png)
+
 >**USE IT, and please share with me if you find it useful and interesting**
 
    [flask]: <http://flask.pocoo.org/>
