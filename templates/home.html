@@ -1,0 +1,29 @@
+{% extends "title.html" %}
+{% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}">
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('a#like').bind('click', function() {
+                $.getJSON('/liked', {
+                    a: $(event.target).attr('id'), 
+                }, function(data) {
+                    ans = data.result;
+                    $("#like" + ans).html(parseInt($("#like" + ans).text()) + 1);
+                });
+                return false;
+            })
+        });
+    </script>
+    <div class="w3-container w3-white w3-border">
+        <h2 class="w3-text-teal">ORDERED MOCKS: </h2>
+    </div>    
+        {% for mock in mocks %}
+            <div class="w3-container w3-white w3-leftbar w3-bottombar w3-border-blue w3-text-black" style="padding-bottom: 10px">
+                <h5>{{ mock[3] }}</h5>
+                <i>{{ mock[1] }}</i>&nbsp;<span>over</span>&nbsp;<b>{{ mock[2] }}</b><br><hr>
+                <div class="w3-white"><a href=# id="like"><button id="{{ mock[0] }}" class="w3-btn w3-round w3-white w3-round-xxlarge w3-hover-teal" style="border-width: 4px; border-color: white; border-style:solid"><i class="fa fa-thumbs-up"></i> LIKE</button></a>&nbsp;<span class='w3-text-blue w3-padding'><b>LIKES: <label class="w3-label w3-text-blue" id ="like{{ mock[0] }}">{{ mock[4] }}</label></b></span></div>
+            </div>
+            <br>
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MockJay: Twitter from Binary Blood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='w3.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-navbar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-users{font-size: 200px}
+    </style>
+</head>
+<body>
+    <!-- <div class="w3-top"> -->
+    <div>
+        <ul class="w3-navbar w3-top w3-border w3-light-grey w3-card-4">   
+            <li class="w3-large w3-padding"><a href="{{ url_for('home') }}">HOME</a></li>
+            <li class="w3-large w3-padding"><a href="{{ url_for('mock') }}">MOCK</a></li>
+        </ul>
+    </div>
+    <div class="w3-container w3-teal w3-padding-128 w3-center">
+        <h1 class="w3-margin w3-jumbo">MOCKjAY</h1>
+        <p class="w3-xxlarge">A NEW BIRD IN TOWN</p>
+        <button class="w3-btn w3-padding-16 w3-large w3-margin-top"><a href="{{ url_for('mock') }}">MOCK</a></button>
+    </div>
+        {% block content %}
+        {% endblock %}
+    <div class="w3-container" style="padding-bottom: 50px"></div>
+    <footer class="w3-container w3-round w3-light-grey  w3-bottom w3-border">
+        <h2 class="w3-center">DEVELOPED AT BINARY BLOOD</h2>
+    </footer>
+</body>
+</html>
